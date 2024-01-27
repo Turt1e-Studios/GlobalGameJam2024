@@ -1,12 +1,12 @@
 using System.Numerics;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class TestEnemy : Enemy
 {
     // Note to whoever's editing this code: you don't need to add a health variable here because this class inherits from Enemy which already has health functionality.
     [SerializeField] private int speed = 1;
     [SerializeField] private float distanceFromPlayer = 5f;
-    private GameObject Player;
+    private GameObject player;
     private Player playerScript;
     private Rigidbody testEnemyRb;
     private float enemySpeed;
