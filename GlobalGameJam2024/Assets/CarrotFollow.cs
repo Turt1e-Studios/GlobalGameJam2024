@@ -1,21 +1,12 @@
-using System.Numerics;
 using UnityEngine;
+using Vector3 = UnityEngine.Vector3;
 
-public class Enemy : MonoBehaviour
+public class CarrotFollow : MonoBehaviour
 {
-    // Note to whoever's editing this code: you don't need to add a health variable here because this class inherits from Enemy which already has health functionality.
+    [SerializeField] private GameObject player;
     [SerializeField] private int speed = 1;
     [SerializeField] private float distanceFromPlayer = 5f;
-    private GameObject Player;
-    private Player playerScript;
-    private Rigidbody testEnemyRb;
-    private float enemySpeed;
-
-    private void Awake()
-    {
-        health = maxHealth; // have to include this line to set health in any enemy class
-        testEnemyRb = GetComponent<Rigidbody>();
-    }
+    private float _enemySpeed;
 
     // Update is called once per frame
     private void Update()
@@ -26,11 +17,4 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject == player)
-        {
-            playerScript.ChangeHealth(-1);
-        }
-    }
 }
