@@ -4,8 +4,8 @@ using Vector3 = UnityEngine.Vector3;
 public class CarrotFollow : MonoBehaviour
 {
     [SerializeField] private GameObject player;
-    [SerializeField] private int speed = 1;
-    [SerializeField] private float distanceFromPlayer = 5f;
+    [SerializeField] private int enemySpeed = 2;
+    [SerializeField] private float distanceFromPlayer = 2f;
     private float _enemySpeed;
 
     // Update is called once per frame
@@ -13,7 +13,7 @@ public class CarrotFollow : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, player.transform.position) > distanceFromPlayer)
         {
-            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, enemySpeed * Time.deltaTime);
         }
     }
 
