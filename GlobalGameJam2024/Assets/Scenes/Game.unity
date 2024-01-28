@@ -917,7 +917,7 @@ MonoBehaviour:
   score: 0
   initialTime: 0
   player: {fileID: 557453848}
-  enemySpeed: 2
+  enemySpeed: 1.1
   distanceFromPlayer: 2
   scoreText: {fileID: 338703209}
 --- !u!1 &1449354605
