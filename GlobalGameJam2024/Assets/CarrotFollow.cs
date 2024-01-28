@@ -12,6 +12,7 @@ public class CarrotFollow : MonoBehaviour
     [SerializeField] private float distanceFromPlayer = 2f;
     private float _enemySpeed;
     [SerializeField] private TextMeshProUGUI scoreText;
+    public TextMeshProUGUI gameOverText;
 
     void Start()
     {
@@ -23,16 +24,20 @@ public class CarrotFollow : MonoBehaviour
     {
         score = Math.Round(Time.time - initialTime,2);
         scoreText.text = score + "";
-
+        
+        print(Vector3.Distance(transform.position, player.transform.position));
         if (Vector3.Distance(transform.position, player.transform.position) > distanceFromPlayer)
         {
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, enemySpeed * Time.deltaTime);
 
         }
-        else
-        {
-            
-        }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.CompareTag("Player"))
+        {
+            gameOverText.enabled = true;
+        }
+    }
 }
