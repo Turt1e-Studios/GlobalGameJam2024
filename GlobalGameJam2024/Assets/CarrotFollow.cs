@@ -8,7 +8,7 @@ public class CarrotFollow : MonoBehaviour
     public double score;
     public float initialTime;
     [SerializeField] private GameObject player;
-    [SerializeField] private int enemySpeed = 2;
+    [SerializeField] private float enemySpeed = 2;
     [SerializeField] private float distanceFromPlayer = 2f;
     private float _enemySpeed;
     [SerializeField] private TextMeshProUGUI scoreText;
