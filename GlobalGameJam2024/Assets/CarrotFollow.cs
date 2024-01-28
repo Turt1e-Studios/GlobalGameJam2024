@@ -1,14 +1,17 @@
 using UnityEngine;
+using TMPro;
+using System;
 using Vector3 = UnityEngine.Vector3;
 
 public class CarrotFollow : MonoBehaviour
 {
-    public float score;
+    public double score;
     public float initialTime;
     [SerializeField] private GameObject player;
     [SerializeField] private int enemySpeed = 2;
     [SerializeField] private float distanceFromPlayer = 2f;
     private float _enemySpeed;
+    [SerializeField] private TextMeshProUGUI scoreText;
 
     void Start()
     {
@@ -18,6 +21,8 @@ public class CarrotFollow : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        score = Math.Round(Time.time - initialTime,2);
+        scoreText.text = score + "";
 
         if (Vector3.Distance(transform.position, player.transform.position) > distanceFromPlayer)
         {
@@ -26,7 +31,7 @@ public class CarrotFollow : MonoBehaviour
         }
         else
         {
-            score = Time.time - initialTime;
+            
         }
     }
 
