@@ -25,7 +25,7 @@ public class CarrotFollow : MonoBehaviour
         score = Math.Round(Time.time - initialTime,2);
         scoreText.text = score + "";
         
-        print(Vector3.Distance(transform.position, player.transform.position));
+        //print(Vector3.Distance(transform.position, player.transform.position));
         if (Vector3.Distance(transform.position, player.transform.position) > distanceFromPlayer)
         {
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, enemySpeed * Time.deltaTime);
